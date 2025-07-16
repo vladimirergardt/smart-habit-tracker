@@ -30,7 +30,9 @@ npm run build
 
 ## Структура проекта
 src/
+
 ├── core/                  # Базовые примитивы приложения
+
 │   ├── api/               # API-слой
 │   │   ├── http/          # HTTP-клиент (axios/fetch)
 │   │   ├── resources/     # API-ресурсы (habits, auth, stats)
