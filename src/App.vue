@@ -1,47 +1,35 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="app">
+      <!--app topBar-->
+      <transition name="fade" mode="out-in">
+          <router-view name="topBar" />
+      </transition>
+    <main class="main-container">
+        <!--app sideBar-->
+        <transition name="fade" mode="out-in">
+            <router-view name="sideBar" />
+        </transition>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+        <!--app content-->
+        <section>
+            <transition name="fade" mode="out-in">
+                <router-view/>
+            </transition>
+        </section>
+    </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+    import { defineComponent } from 'vue'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+    export default defineComponent({
+        name: 'App',
+        setup() {
+        }
+    })
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+<style lang="scss">
+    @import "@/assets/main.scss";
 </style>

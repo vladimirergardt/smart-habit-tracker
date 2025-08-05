@@ -1,0 +1,22 @@
+@import 'styles/global.scss';
+
+#app {
+  font-weight: normal;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+.main-container {
+  display: flex;
+}
